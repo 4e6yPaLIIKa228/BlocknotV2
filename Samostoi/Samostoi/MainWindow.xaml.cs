@@ -17,6 +17,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.Windows.Controls.Primitives;
+using System.Net.Mime;
+using System.Web;
 
 
 
@@ -312,23 +314,33 @@ namespace Samostoi
             //
             //try
             // {
-
             // string Str = new TextRange(RichTxBox.Document.ContentStart, RichTxBox.Document.ContentEnd).Text;
-            SmtpClient client = new SmtpClient();
-            client.Host = "smtp.mail.ru";
-            client.Port = 587;
-            client.EnableSsl = true;
-            client.Credentials = new NetworkCredential("sasha-pushkarev-01@mail.ru", "25072010CFIF");
-            string from = Texbx1.Text;
-            string to = Texbx1_Copy.Text;
-            string subject = "Проверка клавиатуры";
-            string text = "В ходе проверки клавиатуры, я имею такие данные: ";
-            MailMessage message = new MailMessage(from, to, subject, text);
-           // Attachment sendfile = new Attachment(file);
-           // message.Attachments.Add(sendfile);
-            client.Send(message);
-
-
+            //SmtpClient client = new SmtpClient();
+            // client.Host = "smtp.mail.ru";
+            //client.Port = 587;
+            //client.EnableSsl = true;
+            //client.Credentials = new NetworkCredential("sasha-pushkarev-01@mail.ru", "25072010CFIF");
+            //string from = Texbx1.Text;
+            // string to = Texbx1_Copy.Text;
+            // string subject = "Проверка клавиатуры";
+            // string text = "В ходе проверки клавиатуры, я имею такие данные: ";
+            //MailMessage message = new MailMessage(from, to, subject, text);
+            // Attachment sendfile = new Attachment(file);
+            // message.Attachments.Add(sendfile);
+            // client.Send(message);
+            // MailMessage message = new MailMessage(); // создание нового письма
+            // message.To.Add("alexander_pushkar@mail.ru"); // добавление адреса получателя
+            // message.From = new MailAddress("sasha-pushkarev-01@mail.ru", "Name"); // указание имени и адреса отправителя
+            //// message.Subject = "Тема"; // указание темы письма 
+            // message.BodyEncoding = System.Text.Encoding.UTF8; // указание кодировки письма
+            // message.IsBodyHtml = false; // указание формата письма (true - HTML, false - не HTML)
+            // message.Body = "Текст письма"; // указание текста (тела) письма
+            // SmtpClient client = new SmtpClient("smtp.mail.ru", 25); // создание нового подключения к серверу "smtp.domain.tld"
+            // client.DeliveryMethod = SmtpDeliveryMethod.Network; // определяет метод отправки сообщений
+            // client.EnableSsl = false; // отключает необходимость использования защищенного соединения с сервером
+            // client.UseDefaultCredentials = false; // отключение использования реквизитов авторизации "по-умолчанию"
+            // client.Credentials = new NetworkCredential(""); // указание нужных реквизитов (имени пользователя и пароля) для авторизации на SMTP-сервере
+            // client.Send(message); // отправка сообщения
             //  }
             // catch { }
             // }
